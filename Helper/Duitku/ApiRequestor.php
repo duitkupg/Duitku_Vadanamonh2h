@@ -1,6 +1,6 @@
 <?php
 
-class Duitku_Vamandirih2h_ApiRequestor {
+class Duitku_Vadanamonh2h_ApiRequestor {
 
   public static function get($url, $data_hash)
   {

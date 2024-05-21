@@ -1,21 +1,21 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Vamandiri Host to Host.
+ * Copyright (c) 2017. All rights reserved Duitku Vadanamon Host to Host.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Vamandirih2h
- * @copyright Duitku Vamandirih2h (http://duitku.com)
- * @license   Duitku Vamandirih2h
+ * @author    Duitku Vadanamonh2h
+ * @copyright Duitku Vadanamonh2h (http://duitku.com)
+ * @license   Duitku Vadanamonh2h
  *
  */
-namespace Duitku\Vamandirih2h\Block\Adminhtml\Sales\Order\View;
+namespace Duitku\Vadanamonh2h\Block\Adminhtml\Sales\Order\View;
 
-use Duitku\Vamandirih2h\Model\Method\Epay\Payment as EpayPayment;
-use Duitku\Vamandirih2h\Helper\DuitkuConstants;
+use Duitku\Vadanamonh2h\Model\Method\Epay\Payment as EpayPayment;
+use Duitku\Vadanamonh2h\Helper\DuitkuConstants;
 
 class PaymentInfo extends \Magento\Backend\Block\Template
 {
@@ -30,7 +30,7 @@ class PaymentInfo extends \Magento\Backend\Block\Template
     protected $_priceHelper;
 
     /**
-     * @var \Duitku\Vamandirih2h\Helper\Data
+     * @var \Duitku\Vadanamonh2h\Helper\Data
      */
     protected $_duitkuHelper;
 
@@ -39,14 +39,14 @@ class PaymentInfo extends \Magento\Backend\Block\Template
      * @param \Magento\Backend\Block\Template\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\Pricing\Helper\Data $priceHelper
-     * @param \Duitku\Vamandirih2h\Helper\Data $duitkuHelper
+     * @param \Duitku\Vadanamonh2h\Helper\Data $duitkuHelper
      * @param array $data
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Pricing\Helper\Data $priceHelper,
-        \Duitku\Vamandirih2h\Helper\Data $duitkuHelper,
+        \Duitku\Vadanamonh2h\Helper\Data $duitkuHelper,
         array $data = []
     ) {
         parent::__construct($context, $data);
@@ -84,8 +84,8 @@ class PaymentInfo extends \Magento\Backend\Block\Template
         $paymentMethod = $payment->getMethod();
 
        if ($paymentMethod === EpayPayment::METHOD_CODE) {
-            /** @var \Duitku\Vamandirih2h\Model\Method\Epay\Payment */
-            $ePayMethod = $payment->getMethod();
+            /** @var \Duitku\Vadanamonh2h\Model\Method\Epay\Payment */
+            $ePayMethod = $payment->getMethodInstance();
 
             if (isset($ePayMethod)) {
                 $transactionId = $payment->getAdditionalInformation($ePayMethod::METHOD_REFERENCE);
@@ -110,7 +110,7 @@ class PaymentInfo extends \Magento\Backend\Block\Template
     /**
      * Create Checkout Transaction HTML
      *
-     * @param \Duitku\Vamandirih2h\Model\Api\Checkout\Response\Models\Transaction $transaction
+     * @param \Duitku\Vadanamonh2h\Model\Api\Checkout\Response\Models\Transaction $transaction
      * @return string
      */
    
@@ -146,7 +146,7 @@ class PaymentInfo extends \Magento\Backend\Block\Template
     /**
      * Create ePay Transaction HTML
      *
-     * @param \Duitku\Vamandirih2h\Model\Api\Epay\Response\Models\TransactionInformationType $transactionInformation
+     * @param \Duitku\Vadanamonh2h\Model\Api\Epay\Response\Models\TransactionInformationType $transactionInformation
      * @param \Magento\Sales\Model\Order $order
      * @return string
      */

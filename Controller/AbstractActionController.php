@@ -1,23 +1,23 @@
 <?php
 /**
-* Copyright (c) 2017. All rights reserved Duitku Vamandiri Host to Host.
+* Copyright (c) 2017. All rights reserved Duitku Vadanamon Host to Host.
 *
 * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
 * It is also not legal to do any changes to the software and distribute it in your own name / brand.
 *
 * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
 *
-* @author    Duitku Vamandirih2h
-* @copyright Duitku Vamandirih2h (http://duitku.com)
-* @license   Duitku Vamandirih2h
+* @author    Duitku Vadanamonh2h
+* @copyright Duitku Vadanamonh2h (http://duitku.com)
+* @license   Duitku Vadanamonh2h
 *
 */
-namespace Duitku\Vamandirih2h\Controller;
+namespace Duitku\Vadanamonh2h\Controller;
 
 use \Magento\Sales\Model\Order;
 use \Magento\Sales\Model\Order\Payment\Transaction;
-use \Duitku\Vamandirih2h\Helper\DuitkuConstants;
-use \Duitku\Vamandirih2h\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\Vadanamonh2h\Helper\DuitkuConstants;
+use \Duitku\Vadanamonh2h\Model\Method\Epay\Payment as EpayPayment;
 use \Magento\Framework\Controller\ResultFactory;
 use \Magento\Framework\App\RequestInterface;
 use \Magento\Framework\App\Request\InvalidRequestException;
@@ -35,7 +35,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	protected $_checkoutSession;
 
 	/**
-	* @var \Duitku\Vamandirih2h\Helper\Data
+	* @var \Duitku\Vadanamonh2h\Helper\Data
 	*/
 	protected $_duitkuHelper;
 
@@ -45,7 +45,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	protected $_resultJsonFactory;
 
 	/**
-	* @var \Duitku\Vamandirih2h\Logger\DuitkuLogger
+	* @var \Duitku\Vadanamonh2h\Logger\DuitkuLogger
 	*/
 	protected $_duitkuLogger;
 
@@ -70,9 +70,9 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	* @param \Magento\Framework\App\Action\Context $context
 	* @param \Magento\Sales\Model\OrderFactory $orderFactory
 	* @param \Magento\Checkout\Model\Session $checkoutSession
-	* @param \Duitku\Vamandirih2h\Helper\Data $duitkuHelper
+	* @param \Duitku\Vadanamonh2h\Helper\Data $duitkuHelper
 	* @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
-	* @param \Duitku\Vamandirih2h\Logger\DuitkuLogger $duitkuLogger
+	* @param \Duitku\Vadanamonh2h\Logger\DuitkuLogger $duitkuLogger
 	* @param \Magento\Payment\Helper\Data $paymentHelper
 	* @param \Magento\Sales\Model\Order\Email\Sender\OrderSender $orderSender
 	* @param \Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoiceSender
@@ -81,10 +81,10 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 		\Magento\Framework\App\Action\Context $context,
 		\Magento\Sales\Model\OrderFactory $orderFactory,
 		\Magento\Checkout\Model\Session $checkoutSession,
-		\Duitku\Vamandirih2h\Helper\Data $duitkuHelper,
+		\Duitku\Vadanamonh2h\Helper\Data $duitkuHelper,
 		\Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
 		\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-		\Duitku\Vamandirih2h\Logger\DuitkuLogger $duitkuLogger,
+		\Duitku\Vadanamonh2h\Logger\DuitkuLogger $duitkuLogger,
 		\Magento\Payment\Helper\Data $paymentHelper,
 		\Magento\Sales\Model\Order\Email\Sender\OrderSender $orderSender,
 		\Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoiceSender
@@ -218,7 +218,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	* Process the callback data
 	*
 	* @param \Magento\Sales\Model\Order $order $order
-	* @param \Duitku\Vamandirih2h\Model\Method\AbstractPayment $paymentMethodInstance
+	* @param \Duitku\Vadanamonh2h\Model\Method\AbstractPayment $paymentMethodInstance
 	* @param string $txnId
 	* @param string $methodReference
 	* @param string $ccType
@@ -258,7 +258,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	* @param string $methodReference
 	* @param string $ccType
 	* @param string $ccNumber
-	* @param \Duitku\Vamandirih2h\Model\Method\AbstractPayment $paymentMethodInstance
+	* @param \Duitku\Vadanamonh2h\Model\Method\AbstractPayment $paymentMethodInstance
 	* @param mixed $status
 	* @param mixed $fraudStatus
 	* @return void
@@ -288,7 +288,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	* @param mixed $feeAmountInMinorunits
 	* @param mixed $minorunits
 	* @param mixed $ccType
-	* @param \Duitku\Vamandirih2h\Model\Method\AbstractPayment $paymentMethodInstance
+	* @param \Duitku\Vadanamonh2h\Model\Method\AbstractPayment $paymentMethodInstance
 	* @return void
 	*/
    
@@ -315,7 +315,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	* Create an invoice
 	*
 	* @param \Magento\Sales\Model\Order $order
-	* @param \Duitku\Vamandirih2h\Model\Method\AbstractPayment $paymentMethodInstance
+	* @param \Duitku\Vadanamonh2h\Model\Method\AbstractPayment $paymentMethodInstance
 	*/
 	public function createInvoice($order, $paymentMethodInstance){
 		try{
@@ -356,8 +356,8 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
         } catch (\Exception $e) {
             $error_exception = "AbstractAction.class SaveOrder : " . $e;
             $this->_duitkuLogger->addRecord(500, $error_exception);
-        }
-    }
+		}
+	}
 
 	/**
 	* Log Error

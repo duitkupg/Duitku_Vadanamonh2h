@@ -1,13 +1,13 @@
 <?php
 include_once('ApiRequestor.php');
-class Duitku_Vamandirih2h_Core {
+class Duitku_Vadanamonh2h_Core {
 
   public static function getRedirectionUrl($baseUrl, $params)
   {
   	
     //$payloads = array();
     //$payloads = array_replace_recursive($payloads, $params);    
-    $ApiRequestor = new Duitku_Vamandirih2h_ApiRequestor();
+    $ApiRequestor = new Duitku_Vadanamonh2h_ApiRequestor();
     $result =$ApiRequestor->post($baseUrl . '/api/merchant/v2/inquiry',$params);
 	
     //die();
@@ -31,7 +31,7 @@ class Duitku_Vamandirih2h_Core {
         );
 
         //throw error if failed
-        $result = Duitku_Vamandirih2h_ApiRequestor::post($url,$params);    
+        $result = Duitku_Vadanamonh2h_ApiRequestor::post($url,$params);    
 
 		if ($result->statusCode == "00")			
 			return true;

@@ -9,8 +9,8 @@ define(
         'use strict';
         rendererList.push(
               {
-                 type: 'duitku_vamandirih2hepay',
-                 component: 'Duitku_Vamandirih2h/js/view/payment/method-renderer/duitku-epay-method'
+                 type: 'duitku_vadanamonh2hepay',
+                 component: 'Duitku_Vadanamonh2h/js/view/payment/method-renderer/duitku-epay-method'
              }
         );
         /** Add view logic here if needed */

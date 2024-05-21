@@ -1,29 +1,29 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Vamandiri Host to Host.
+ * Copyright (c) 2017. All rights reserved Duitku Vadanamon Host to Host.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Vamandirih2h
- * @copyright Duitku Vamandirih2h (http://duitku.com)
- * @license   Duitku Vamandirih2h
+ * @author    Duitku Vadanamonh2h
+ * @copyright Duitku Vadanamonh2h (http://duitku.com)
+ * @license   Duitku Vadanamonh2h
  *
  */
-namespace Duitku\Vamandirih2h\Model\Method\Epay;
+namespace Duitku\Vadanamonh2h\Model\Method\Epay;
 use \Magento\Sales\Model\Order\Payment\Transaction;
-use \Duitku\Vamandirih2h\Helper\DuitkuConstants;
+use \Duitku\Vadanamonh2h\Helper\DuitkuConstants;
 
-class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
+class Payment extends \Duitku\Vadanamonh2h\Model\Method\AbstractPayment
 {
-    const METHOD_CODE = 'duitku_vamandirih2hepay';
+    const METHOD_CODE = 'duitku_vadanamonh2hepay';
     const METHOD_REFERENCE = 'duitkuvaperReference';
 
     protected $_code = self::METHOD_CODE;
 
-    protected $_infoBlockType = 'Duitku\Vamandirih2h\Block\Info\View';
+    protected $_infoBlockType = 'Duitku\Vadanamonh2h\Block\Info\View';
 
     /**
      * Payment Method feature
@@ -37,14 +37,14 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
     protected $_canDelete                   = true;
 
     /**
-     * @var \Duitku\Vamandirih2h\Model\Api\Epay\Request\Models\Auth
+     * @var \Duitku\Vadanamonh2h\Model\Api\Epay\Request\Models\Auth
      */
     protected $_auth;
 
     /**
      * Get ePay Auth object
      *
-     * @return \Duitku\Vamandirih2h\Model\Api\Epay\Request\Models\Auth
+     * @return \Duitku\Vadanamonh2h\Model\Api\Epay\Request\Models\Auth
      */
     public function getAuth()
     {
@@ -60,7 +60,7 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
      * Get Duitku Checkout payment window
      *
      * @param \Magento\Sales\Model\Order
-     * @return \Duitku\Vamandirih2h\Model\Api\Epay\Request\Payment
+     * @return \Duitku\Vadanamonh2h\Model\Api\Epay\Request\Payment
      */
     public function getPaymentWindow($order)
     {
@@ -75,20 +75,20 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
      * Create the ePay payment window Request url
      *
      * @param \Magento\Sales\Model\Order
-     * @return \Duitku\Vamandirih2h\Model\Api\Epay\Request\Payment
+     * @return \Duitku\Vadanamonh2h\Model\Api\Epay\Request\Payment
      */
     public function createPaymentRequest($order)
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandirih2hepay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandirih2hepay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vadanamonh2hepay/merchantnumber');
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vadanamonh2hepay/api_key');
     $amount = round($order->getBaseTotalDue());
     
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
     $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayvamandirih2h/callback?isAjax=true&form_key='.$FormKey->getFormKey());
-    $returnUrl = $this->_urlBuilder->getUrl('duitku/epayvamandirih2h/accept');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayvadanamonh2h/callback?isAjax=true&form_key='.$FormKey->getFormKey());
+    $returnUrl = $this->_urlBuilder->getUrl('duitku/epayvadanamonh2h/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
 
@@ -177,8 +177,8 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
 		
 		$params = array(
              'merchantCode' => $merchantcode,
-             'paymentAmount' => $paymentAmount,
-             'paymentMethod' => 'M2',
+             'paymentAmount' => $amount,
+             'paymentMethod' => 'DM',
 			 'merchantOrderId' =>$orderId,
              'productDetails' => 'Order : '.$orderId,
              'additionalParam' => '',
@@ -253,7 +253,7 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
      *
      * @param mixed $transactionId
      * @param string &$message
-     * @return \Duitku\Vamandirih2h\Model\Api\Epay\Response\Models\TransactionInformationType|null
+     * @return \Duitku\Vadanamonh2h\Model\Api\Epay\Response\Models\TransactionInformationType|null
      */
    
 
@@ -295,7 +295,7 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
      */
     public function getCheckoutUrl()
     {
-        return $this->_urlBuilder->getUrl('duitku/epayvamandirih2h/checkout', ['_secure' => $this->_request->isSecure()]);
+        return $this->_urlBuilder->getUrl('duitku/epayvadanamonh2h/checkout', ['_secure' => $this->_request->isSecure()]);
     }
 
     /**
@@ -305,7 +305,7 @@ class Payment extends \Duitku\Vamandirih2h\Model\Method\AbstractPayment
      */
     public function getCancelUrl()
     {
-        return $this->_urlBuilder->getUrl('duitku/epayvamandirih2h/cancel', ['_secure' => $this->_request->isSecure()]);
+        return $this->_urlBuilder->getUrl('duitku/epayvadanamonh2h/cancel', ['_secure' => $this->_request->isSecure()]);
     }
 
 	private function repString($str) {

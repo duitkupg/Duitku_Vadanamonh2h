@@ -1,27 +1,27 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Vamandiri Host to Host.
+ * Copyright (c) 2017. All rights reserved Duitku Vadanamon Host to Host.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Vamandirih2h
- * @copyright Duitku Vamandirih2h (http://duitku.com)
- * @license   Duitku Vamandirih2h
+ * @author    Duitku Vadanamonh2h
+ * @copyright Duitku Vadanamonh2h (http://duitku.com)
+ * @license   Duitku Vadanamonh2h
  *
  */
 
-namespace Duitku\Vamandirih2h\Helper;
+namespace Duitku\Vadanamonh2h\Helper;
 include_once('Duitku/ApiRequestor.php');
 include_once('Duitku/DuitkuCore.php');
-use Duitku\Vamandirih2h\Helper\DuitkuConstants;
-use Duitku_Vamandirih2h_Core;
+use Duitku\Vadanamonh2h\Helper\DuitkuConstants;
+use Duitku_Vadanamonh2h_Core;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
-     * @var \Duitku\Vamandirih2h\Logger\DuitkuLogger
+     * @var \Duitku\Vadanamonh2h\Logger\DuitkuLogger
      */
     protected $_duitkuLogger;
 
@@ -39,13 +39,13 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * Duitku Helper
      *
      * @param \Magento\Framework\App\Helper\Context $context
-     * @param \Duitku\Vamandirih2h\Logger\DuitkuLogger $duitkuLogger
+     * @param \Duitku\Vadanamonh2h\Logger\DuitkuLogger $duitkuLogger
      * @param \Magento\Framework\Encryption\EncryptorInterface $encryptor
      * @param \Magento\Framework\Module\ModuleListInterface $moduleList
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
-        \Duitku\Vamandirih2h\Logger\DuitkuLogger $duitkuLogger,
+        \Duitku\Vadanamonh2h\Logger\DuitkuLogger $duitkuLogger,
         \Magento\Framework\Encryption\EncryptorInterface $encryptor,
         \Magento\Framework\Module\ModuleListInterface $moduleList
     ) {
@@ -64,11 +64,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getDuitkuEpayConfigData($field, $storeId = null)
     {
-        return $this->getConfigData($field, 'duitku_vamandirih2hepay', $storeId);
+        return $this->getConfigData($field, 'duitku_vadanamonh2hepay', $storeId);
     }
 	
 	public function getDuitkuCore(){
-   		$DuitkuCore = new Duitku_Vamandirih2h_Core();
+   		$DuitkuCore = new Duitku_Vadanamonh2h_Core();
 		return $DuitkuCore;
 	}
 		
@@ -208,7 +208,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getModuleVersion()
     {
-        return $this->_moduleList->getOne("Duitku_Vamandirih2h")['setup_version'];
+        return $this->_moduleList->getOne("Duitku_Vadanamonh2h")['setup_version'];
     }
 
     /**
@@ -250,7 +250,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * Return if Checkout Api Result is valid
      *
-     * @param \Duitku\Vamandirih2h\Model\Api\Checkout\Response\Base $request
+     * @param \Duitku\Vadanamonh2h\Model\Api\Checkout\Response\Base $request
      * @param mixed $id
      * @param bool $isBackoffice
      * @param string &$message

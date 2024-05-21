@@ -18,17 +18,17 @@ define(
 					//this.loadEPayPaymentWindowJs();
 				},
 				defaults: {
-					template: 'Duitku_Vamandirih2h/payment/epay-form'
+					template: 'Duitku_Vadanamonh2h/payment/epay-form'
 				},
 				redirectAfterPlaceOrder: false,
 				getDuitkuEpayTitle: function () {
-					return window.checkoutConfig.payment.duitku_vamandirih2hepay.paymentTitle;
+					return window.checkoutConfig.payment.duitku_vadanamonh2hepay.paymentTitle;
 				},
 				getDuitkuEpayLogo: function () {
-					return window.checkoutConfig.payment.duitku_vamandirih2hepay.paymentLogoSrc;
+					return window.checkoutConfig.payment.duitku_vadanamonh2hepay.paymentLogoSrc;
 				},
 				getDuitkuEpayPaymentLogoSrc: function () {
-					return window.checkoutConfig.payment.duitku_vamandirih2hepay.paymentTypeLogoSrc;
+					return window.checkoutConfig.payment.duitku_vadanamonh2hepay.paymentTypeLogoSrc;
 				},
 				afterPlaceOrder: function () {
 					fullScreenLoader.startLoader();
@@ -36,7 +36,7 @@ define(
 				},
 				getPaymentWindow: function () {
 					var self = this;
-					var url = window.checkoutConfig.payment.duitku_vamandirih2hepay.checkoutUrl;
+					var url = window.checkoutConfig.payment.duitku_vadanamonh2hepay.checkoutUrl;
 				           
 					$.get(url).done(function (response) {
 						
@@ -45,27 +45,27 @@ define(
 							$.mage.redirect(Url);
 							if(!response) {
 								self.showError($t("Error opening payment window"));
-								$.mage.redirect(window.checkoutConfig.payment.duitku_vamandirih2hepay.cancelUrl);
+								$.mage.redirect(window.checkoutConfig.payment.duitku_vadanamonh2hepay.cancelUrl);
 							}
 							self.openPaymentWindow(response);                             
 						}).fail(function(error) {
 							self.showError($t("Error opening payment window") + ': ' + error.statusText);
-							$.mage.redirect(window.checkoutConfig.payment.duitku_vamandirih2hepay.cancelUrl);
+							$.mage.redirect(window.checkoutConfig.payment.duitku_vadanamonh2hepay.cancelUrl);
 						});
 				},
 				openPaymentWindow: function(requestString) {
 					var onclose = function() {
-						var cancelUrl = window.checkoutConfig.payment.duitku_vamandirih2hepay.cancelUrl;
+						var cancelUrl = window.checkoutConfig.payment.duitku_vadanamonh2hepay.cancelUrl;
 						$.mage.redirect(cancelUrl);
 					}
 					var paymentwindow = new PaymentWindow(requestString);
-					if(window.checkoutConfig.payment.duitku_vamandirih2hepay.windowState === "1") {
+					if(window.checkoutConfig.payment.duitku_vadanamonh2hepay.windowState === "1") {
 						paymentwindow.on("close", onclose);
 					}
 					paymentwindow.open();
 				},
 				loadEPayPaymentWindowJs: function() {
-					$.getScript(window.checkoutConfig.payment.duitku_vamandirih2hepay.paymentWindowJsUrl);
+					$.getScript(window.checkoutConfig.payment.duitku_vadanamonh2hepay.paymentWindowJsUrl);
 				},
 				
 				showError: function (errorMessage) {

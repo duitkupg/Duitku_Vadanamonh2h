@@ -1,25 +1,25 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Vamandiri Host to Host.
+ * Copyright (c) 2017. All rights reserved Duitku Vadanamon Host to Host.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Vamandirih2h
- * @copyright Duitku Vamandirih2h (http://duitku.com)
- * @license   Duitku Vamandirih2h
+ * @author    Duitku Vadanamonh2h
+ * @copyright Duitku Vadanamonh2h (http://duitku.com)
+ * @license   Duitku Vadanamonh2h
  *
  */
-namespace Duitku\Vamandirih2h\Model\Method;
+namespace Duitku\Vadanamonh2h\Model\Method;
 
-use Duitku\Vamandirih2h\Helper\DuitkuConstants;
+use Duitku\Vadanamonh2h\Helper\DuitkuConstants;
 
 abstract class AbstractPayment extends \Magento\Payment\Model\Method\AbstractMethod
 {
     /**
-     * @var \Duitku\Vamandirih2h\Helper\Data
+     * @var \Duitku\Vadanamonh2h\Helper\Data
      */
     protected $_duitkuHelper;
 
@@ -62,7 +62,7 @@ abstract class AbstractPayment extends \Magento\Payment\Model\Method\AbstractMet
      * Duitku Checkout constructor.
      *
      * @param \Magento\Framework\UrlInterface $urlBuilder
-     * @param \Duitku\Vamandirih2h\Helper\Data $duitkuHelper
+     * @param \Duitku\Vadanamonh2h\Helper\Data $duitkuHelper
      * @param \Magento\Tax\Helper\Data $taxHelper
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Magento\Framework\Model\Context $context
@@ -82,7 +82,7 @@ abstract class AbstractPayment extends \Magento\Payment\Model\Method\AbstractMet
      */
     public function __construct(
         \Magento\Framework\UrlInterface $urlBuilder,
-        \Duitku\Vamandirih2h\Helper\Data $duitkuHelper,
+        \Duitku\Vadanamonh2h\Helper\Data $duitkuHelper,
         \Magento\Tax\Helper\Data $taxHelper,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\Model\Context $context,

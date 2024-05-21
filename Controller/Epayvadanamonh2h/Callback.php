@@ -1,25 +1,25 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Vamandiri Host to Host.
+ * Copyright (c) 2017. All rights reserved Duitku Vadanamon Host to Host.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Vamandirih2h
- * @copyright Duitku Vamandirih2h (http://duitku.com)
- * @license   Duitku Vamandirih2h
+ * @author    Duitku Vadanamonh2h
+ * @copyright Duitku Vadanamonh2h (http://duitku.com)
+ * @license   Duitku Vadanamonh2h
  *
  */
-namespace Duitku\Vamandirih2h\Controller\Epayvamandirih2h;
+namespace Duitku\Vadanamonh2h\Controller\Epaydanamonh2h;
 
 use \Magento\Framework\Webapi\Exception;
 use \Magento\Framework\Webapi\Response;
-use \Duitku\Vamandirih2h\Model\Method\Epay\Payment as EpayPayment;
-use \Duitku\Vamandirih2h\Helper\DuitkuConstants;
+use \Duitku\Vadanamonh2h\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\Vadanamonh2h\Helper\DuitkuConstants;
 
-class Callback extends \Duitku\Vamandirih2h\Controller\AbstractActionController
+class Callback extends \Duitku\Vadanamonh2h\Controller\AbstractActionController
 {
     /**
      * Callback Action
@@ -92,7 +92,7 @@ class Callback extends \Duitku\Vamandirih2h\Controller\AbstractActionController
 	     $merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
          $signature = isset($posted['signature']) ? $posted['signature'] : null; 
 	     $obj = \Magento\Framework\App\ObjectManager::getInstance();
-  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandirih2hepay/api_key');
+  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vadanamonh2hepay/api_key');
 	     $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
 	     $resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
@@ -126,7 +126,7 @@ class Callback extends \Duitku\Vamandirih2h\Controller\AbstractActionController
         try {
             $pspReference = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
             if (empty($pspReference)) {
-                /** @var \Duitku\Vamandirih2h\Model\Method\Epay\Payment */
+                /** @var \Duitku\Vadanamonh2h\Model\Method\Epay\Payment */
                 $paymentMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
                  $this->_processCallbackData($order,
                      $paymentMethod,
