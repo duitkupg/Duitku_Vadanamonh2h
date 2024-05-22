@@ -1,6 +1,6 @@
 {
-  "name": "duitku_payment_gateway/duitku_va_mandiri",
-  "description": "Magento 2 payment module for Duitku VA mandiri Host to Host",
+  "name": "duitku_payment_gateway/duitku_va_danamon",
+  "description": "Magento 2 payment module for Duitku VA danamon Host to Host",
   "type": "magento2-module",
   "authors" : [
 		{
@@ -29,7 +29,7 @@
 		"magento24",
 		"magento 2.4",
 		"duitku",
-		"duitku mandiri",
-		"mandiri"
+		"duitku danamon",
+		"danamon"
 	]
 }
